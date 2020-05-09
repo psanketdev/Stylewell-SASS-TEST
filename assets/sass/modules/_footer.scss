@@ -1,0 +1,118 @@
+%social-icon {
+    text-indent: -9999px;
+    display: inline-block;
+    text-align: center;
+
+    &::before{
+            width: 30px;
+            height: 25px;
+            padding: 20px;
+            float: left;
+            text-indent: 0;
+            font-family: "Fontawesome";
+            color: $white;
+            font-size: 25px;
+    }
+}
+
+
+
+//footer 
+
+footer{
+    width: 100%;
+    padding: 40px 0;
+    background-color: $secondary;
+
+    h6 {
+        margin-bottom: 80px;
+        text-align: center;
+        @include font($primary, 35px, unset, $regular, 1px, unset, unset);
+        text-transform: $upper;
+
+        @include breakpoint('phone') {font-size: 30px;}
+        @include breakpoint('iphone'){font-size: 25px;}
+        @include breakpoint('small-iphone'){font-size: 20px;}
+    }
+
+    .footer-icons {
+        box-sizing: border-box;
+        margin-bottom: 60px;
+        @include flex;
+        @include justify-content(space-around);
+        @include align-item(center);
+        @include flex-wrap(nowrap);
+
+        @include breakpoint('phone') {
+            @include justify-content(center);
+            @include flex-wrap(wrap);
+        }
+
+        @include breakpoint('iphone') {flex-direction: column;}
+
+        li {
+            text-align: center;
+            width: 20%;
+            display: inline-block;
+
+            @include breakpoint('phone'){
+                width: 35%;
+                
+                &:not(:last-of-type){margin-bottom: 25px;}
+            }
+
+            span { 
+                display: block;
+                @include font($white, 19px, unset, $regular, 1px, unset, unset);
+
+                @include breakpoint('phone'){font-size: 16px;}
+                @include breakpoint('iphone'){font-size: 12px;}
+            }
+
+            a {
+                margin-bottom: 18px;
+              @extend  %social-icon;
+              
+            }
+
+            & .mail::before {
+                content: '\f003';
+                background-color: #bd2121;           
+            }
+      
+            & .facebook::before {
+                content: '\f09a';
+                background-color: #3b5998;
+            }
+
+            
+            & .twitter::before {
+                content: '\f099';
+                background-color: #1da1f2;
+            }
+
+            
+            & .dribbble::before {
+                content: '\f17d';
+                background-color: #ea4c89;
+            }
+
+            & .vimeo::before {
+                content: '\f27d';
+                background-color: #1ab7ea;
+            }
+        }
+     }
+
+     .footer-bottom {
+         span {
+             display: block;
+             @include font($white, 15px, unset, $regular, .5px, unset, unset);
+             text-align: center;
+
+             @include breakpoint('iphone'){font-size: 10px;}
+             @include breakpoint('small-iphone'){font-size: 9px;}
+             a { color: $sky-blue;}
+         }
+     }
+}

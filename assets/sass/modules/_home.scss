@@ -1,0 +1,409 @@
+%icon {
+  text-indent: -9999px;
+  display: inline-block;
+
+  &::before{
+          width: 20px;
+          height: 20px;
+          padding: 19px;
+          float: left;
+          text-indent: 0;
+          font-family: "Fontawesome";
+          color: $white;
+          background-color: $primary;
+          font-size: 20px;
+  }
+}
+
+
+// home-banner
+.home-banner {
+    width: 100%;
+    padding: 305px 0;
+    @include background('https://dummyimage.com/1349x692/ccc/ccc', no-repeat, center, cover);
+    @include position(relative, unset, unset, unset, unset, unset);
+    text-align: center;
+
+    h2 {
+        padding: 0 6%;
+        @include font($white, 30px, unset, $bold, .5px, 1.3, unset);
+        text-transform: $capital;
+
+        @include breakpoint('phone') {font-size: 25px; }
+        @include breakpoint('iphone') {font-size: 20px; }
+        @include breakpoint('small-iphone') {font-size: 18px;}
+    }
+}
+
+// home category
+
+.home-category{
+    width: 100%;
+    padding: 75px 0;
+
+    #{&}_content {
+        width: 100%;
+        @include flex;
+        @include justify-content(space-evenly);
+        @include align-item(center);
+        @include flex-direction(row);
+        @include flex-wrap(nowrap);
+
+        @include breakpoint('phone') {
+          @include flex-direction(column);
+          @include flex-wrap(wrap);
+        }
+
+        li {
+          width: 30%;
+          @include flex;
+          @include justify-content(space-around);
+          @include align-item(flex-start);
+          @include flex-direction(row);
+          @include flex-wrap(nowrap);
+
+          @include breakpoint('pc') {width: 31%;}
+
+          @include breakpoint('phone') {
+            width: 50%;
+            margin-bottom: 30px;
+            @include flex-wrap(wrap);
+          }
+
+          @include breakpoint('iphone') {width: 70%;}
+          @include breakpoint('small-iphone') {width: 80%;}
+
+          span {
+            @extend %icon;
+
+            @include breakpoint('pc') {margin-right: 15px;}
+            @include breakpoint('iphone') {
+              display: block;
+              margin-bottom: 20px;}
+          }
+
+          & .gear::before{ content: '\f013';}
+          & .clock::before{ content: '\f017';}
+          & .horn::before{ content: '\f0a1';}
+        }
+
+        h3 {
+          margin-bottom: 17px;
+          @include font($sky-blue, 24px, unset, lighter, .7px, unset, unset);
+          text-transform: $capital;
+
+          @include breakpoint('pc') {margin-bottom: 10px;}
+          @include breakpoint('phone') {font-size: 22px;}
+
+          @include breakpoint('iphone'){
+            font-size: 18px;
+            text-align: center;
+          }
+
+          @include breakpoint('small-iphone') {font-size: 15px;}
+        }
+
+        p {
+          padding-right: 1%;
+          @include font(#777, 14px, unset, lighter, .5px, 1.7, unset);
+          @include breakpoint('phone'){padding: 0;}
+
+          @include breakpoint('iphone'){
+            text-align: center;
+            font-size: 12px;
+          }
+        }
+    }
+}
+
+//news-letter
+
+.newsletter {
+  width: 100%;
+  @include background('https://dummyimage.com/1349x397/ccc/ccc', no-repeat, center, cover);
+  position: relative;
+
+  .wrapper {
+    box-sizing: border-box;
+    padding: 95px 0 150px;
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(center);
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+
+    @include breakpoint('ipad') {
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+    }
+  }
+
+  #{&}_content {
+    width: 45%;
+    margin-right: 5%;
+
+    @include breakpoint('pc'){margin-right: 4%;}
+
+    @include breakpoint('ipad') {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      margin: 0 0 30px 0;
+    }
+
+    @include breakpoint('iphone'){ width: 100%;}
+    @include breakpoint('small-iphone') {width: 100%;}
+
+    h3 {
+      margin-bottom: 30px;
+      @include font($sky-blue, 24px, unset, lighter, .7px, unset, unset);
+      text-transform: $capital;
+
+      @include breakpoint('phone') {font-size: 22px;}
+      @include breakpoint('small-iphone') {font-size: 17px;}
+    }
+
+    p {
+      @include font($white, 14px, unset, lighter, .5px, 2, unset);
+      @include breakpoint('iphone'){font-size: 12px;}
+    }
+  }
+
+  #{&}_form {
+    width: 58%;
+    @include breakpoint('pc'){width: 55%;}
+
+    @include breakpoint('ipad'){
+      width: 70%;
+      text-align: center;
+    }
+
+    @include breakpoint('phone'){width: 80%;}
+    @include breakpoint('iphone'){width: 100%;}
+    
+    input[type="text"]{
+      width: 65%;
+      padding: 12px 0 12px 5px;
+      border: 1.5px solid $white;
+      background: none;
+      font-size: 14px;
+      outline: none;
+
+      @include breakpoint('phone') {
+        width: 100%;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      @include breakpoint('iphone'){
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      &::placeholder {
+        padding-left: 5px;
+        color: $white;
+        font-size: 14px;
+        text-transform: $capital;
+      }
+    }
+
+    button {
+      padding: 13.5px 45px;
+      border: 1px solid;
+      margin-left: -6px;
+      @include font($white, 13px, unset, lighter, .5px, unset, unset);
+      background-color: $sky-blue;
+      text-transform: $capital;
+      @include transition(.5s);
+
+      @include breakpoint('pc'){ padding: 13.5px 42px;}
+
+      @include breakpoint('phone'){border-radius: 5px;}
+
+      @include breakpoint('iphone'){
+        padding: 10.5px 27px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      &:hover {
+        color: $sky-blue;
+        background-color: $white;
+
+        @include breakpoint('iphone'){
+          background-color: $sky-blue;
+          color: $white;
+        }
+      }
+    }
+  }
+  
+}
+
+// home generators
+
+.home-generators {
+  width: 100%;
+  padding: 75px 0 120px;
+
+  .wrapper {
+    box-sizing: border-box;
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(flex-start);
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+
+    @include breakpoint('phone') {
+      @include flex-direction(column-reverse);
+      @include flex-wrap(wrap);
+    }
+  }
+
+  #{&}_images {
+    width: 50%;
+    margin-right: 10%;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+
+    @include breakpoint('pc'){margin-right: 5%;}
+    @include breakpoint('phone') {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    @include breakpoint('iphone') {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @include breakpoint('small-iphone') {width: 100%;}
+
+    .image_lower {
+      //  width: 100%;
+      padding-top: 35px;
+      z-index: -2;
+      display: inline-block;
+
+      @include breakpoint('pc'){display: none;}
+    }
+
+    .image_upper {
+      @include position(absolute, 2, 0, unset, unset, 90px);
+      @include breakpoint('pc'){
+        width: 100%;
+        @include position(unset, unset, unset, unset, unset, unset);
+      }
+    }
+  }
+
+  #{&}_content {
+    width: 40%;
+    display: inline-block;
+    @include breakpoint('pc'){width: 50%;}
+
+    @include breakpoint('phone'){
+      width: 80%;
+      padding-bottom: 30px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include breakpoint('iphone') {width: 100%;}
+
+    h4 {
+      margin-bottom: 22px;
+      @include font($sky-blue, 35px, unset, lighter, 1px, unset, unset);
+      text-transform: $upper;
+
+      @include breakpoint('phone') {font-size: 30px;}
+      @include breakpoint('iphone') {font-size: 25px;}
+      @include breakpoint('small-iphone'){font-size: 20px;}
+
+      + p {
+        margin-bottom: 22px;
+        @include font($black, 23px, unset, lighter, .5px, 1.4, unset);
+
+        @include breakpoint('phone') {font-size: 20px;}
+        @include breakpoint('iphone') {font-size: 17px;}
+        @include breakpoint('small-iphone'){font-size: 15px;}
+
+        span {
+          color: $primary;
+        }
+      }
+    }
+    p {
+      margin-bottom: 15px;
+      @include font(#777, 14px, unset, lighter, .3px, 1.7, unset);
+
+      @include breakpoint('iphone') {font-size: 12px;}
+    }
+  }
+}
+
+// home cards
+
+.home-cards {
+  width: 100%;
+  padding-bottom: 75px;
+
+  #{&}_content{
+    box-sizing: border-box;
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(flex-start);
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+
+    @include breakpoint('phone'){
+      @include align-item(center);
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+    }
+
+    li {
+      width: 33.33%;
+      box-shadow: 2px 4px 10px rgba(0,0,0,.4);
+
+      @include breakpoint('phone'){ width: 50%;}
+      @include breakpoint('iphone') {width: 100%}
+
+      &:not(:last-of-type){
+        margin-right: 30px;
+      
+        @include breakpoint('phone'){
+         margin: 0 0 30px 0;
+        }
+      }
+
+      figure{
+        width: 100%;
+      }
+
+      .card-content {
+        padding: 25px 15px;
+        border: 1px solid $primary;
+        border-top: none;
+       
+
+        h5 {
+          margin-bottom: 15px;
+          @include font($sky-blue, 21px, unset, lighter, 1px, unset, unset);
+          text-transform: $capital;
+
+          @include breakpoint('phone'){font-size: 20px;}
+          @include breakpoint('iphone'){font-size: 17px;}
+        }
+
+        p{
+          @include font(#777, 14px, unset, lighter, .3px, 1.7 , unset);
+          @include breakpoint('iphone'){font-size: 12px;}
+        }
+      }
+    }
+  }
+}

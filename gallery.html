@@ -1,0 +1,211 @@
+<!doctype html>
+
+<!-- If multi-language site, reconsider usage of html lang declaration here. -->
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Gallery-Stylewell | SASS</title>
+
+  <!-- 120 word description for SEO purposes goes here. Note: Usage of lang tag. -->
+  <!-- <meta name="description" lang="en" content=""> -->
+
+  <!-- Keywords to help with SEO go here. Note: Usage of lang tag.  -->
+  <!-- <meta name="keywords" lang="en" content=""> -->
+
+  <!-- View-port Basics: http://mzl.la/VYREaP -->
+  <!-- This meta tag is used for mobile device to display the page without any zooming,
+         so how much the device is able to fit on the screen is what's shown initially. 
+         Remove comments from this tag, when you want to apply media queries to the website. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- To adhear no-cache for Chrome -->
+  <!--   <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-store, no-cache" />
+    <meta http-equiv="Expires" content="0" /> -->
+
+  <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <!--font-awesome link for icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
+
+
+
+</head>
+
+<body>
+  <!--container start-->
+  <div class="container">
+    <!-- header start -->
+    <header>
+      <div class="wrapper">
+        <h1>
+          <a href="index.html" title="Stylewell">
+            <img src="https://dummyimage.com/233x30" alt="Stylewell">
+          </a>
+        </h1>
+        <div class="nav_burger">
+          <div class="burger">
+            <span>line1</span>
+            <span>line2</span>
+            <span>line3</span>
+          </div>
+          <nav>
+            <ul class="nav_links">
+              <li>
+                <a href="home.html" title="Home">home</a>
+              </li>
+              <li>
+                <a href="about.html" title="About">about</a>
+              </li>
+              <li>
+                <a href="gallery.html" title="Gallery" class="active">gallery</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <form class="header_form">
+          <button type="search" class="search">search</button>
+        </form>
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- main start -->
+    <main>
+      <!-- gallery banner start -->
+      <div class="gallery-banner"></div>
+      <!-- gallery banner end -->
+      <!-- image gallery start -->
+      <section class="gallery">
+        <div class="wrapper">
+          <h2>gallery</h2>
+          <ul class="gallery_images">
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="https://dummyimage.com/264x180" alt="Gallery">
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- image gallery end -->
+      <!-- newsletter start -->
+      <section class="newsletter">
+        <div class="wrapper">
+          <div class="newsletter_content">
+            <h3>Subscribe to Newsletter</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque minima unde autem officiis commodi
+              consequuntur eum, beatae reiciendis velit, nobis consequatur doloremque, iste facilis veniam explicabo aut
+              laboriosam officia? Assumenda.</p>
+          </div>
+          <form action="#FIXME" class="newsletter_form">
+            <input type="text" id="email" placeholder="email">
+            <button type="submit" id="submit">subscribe</button>
+          </form>
+        </div>
+      </section>
+      <!-- newsletter end -->
+    </main>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer>
+      <div class="wrapper">
+        <h6>get in touch</h6>
+        <ul class="footer-icons">
+          <li>
+            <a href="mailto:info@example.com" target="_blank" title="info@example.com" class="mail">mail</a>
+            <span>info@example.com</span>
+          </li>
+          <li>
+            <a href="#FIXME" target="_blank" title="Facebook" class="facebook">facebook</a>
+            <span>Facebook</span>
+          </li>
+          <li>
+            <a href="#FIXME" target="_blank" title="Twitter" class="twitter">twitter</a>
+            <span>Twitter</span>
+          </li>
+          <li>
+            <a href="#FIXME" target="_blank" title="Dribbble" class="dribbble">dribbble</a>
+            <span>Dribbble</span>
+          </li>
+          <li>
+            <a href="#FIXME" target="_blank" title="Vimeo" class="vimeo">vimeo</a>
+            <span>Vimeo</span>
+          </li>
+        </ul>
+        <div class="footer-bottom">
+          <span>&copy; 2017 Stylwell. All rights reserved | Design by <a href="#FIXME"
+              title="W3layouts">W3layouts</a></span>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </div>
+  <!--container end-->
+
+  <script></script>
+
+</body>
+
+</html>

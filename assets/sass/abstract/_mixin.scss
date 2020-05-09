@@ -1,0 +1,91 @@
+@mixin vendor($property, $content) {
+	-webkit-#{$property}: $content;
+	-moz-#{$property}: $content;
+	-ms-#{$property}: $content;
+	-o-#{$property}: $content;
+	#{$property}: $content;
+}
+
+@mixin font($color, $size, $style, $weight, $letter-spacing, $line-height, $word-spacing) {
+  color: $color;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  word-spacing: $word-spacing;
+}
+
+@mixin position($position, $zIndex, $top, $right, $bottom, $left) {
+	position: $position;
+	z-index: $zIndex;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin background($url, $repeat, $position, $size) {
+  background: url($url) $repeat $position/$size;
+}
+
+@mixin transition($seconds){
+  -webkit-transition: all $seconds ease-in-out;
+  -moz-transition: all $seconds ease-in-out;
+  -o-transition: all $seconds ease-in-out;
+  transition: all $seconds ease-in-out;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius   : $radius;
+  -webkit-border-radius :  $radius;
+  border-radius: $radius; 
+}
+
+@mixin flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin align-item($content) {
+	-webkit-box-align: $content;
+	-moz-box-align: $content;
+	-ms-flex-align: $content;
+	-webkit-align-items: $content;
+	align-items: $content;
+}
+
+@mixin justify-content($content){
+    -webkit-box-pack: $content;
+    -ms-flex-pack:  $content;
+    justify-content:  $content;
+}
+
+@mixin flex-wrap($content) {
+	-webkit-box-flex-wrap: $content;
+	-webkit-flex-wrap: $content;
+	-ms-flex-wrap: $content;
+	flex-wrap: $content;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin breakpoint($device) {
+    @if($device == 'pc') {
+        @media screen and (max-width: $pc){ @content; }
+    } @else if($device == 'ipad') {
+        @media screen and (max-width: $ipad){ @content; }
+    } @else if($device == 'phone') {
+        @media screen and (max-width: $phone){ @content; }
+    } @else if($device == 'iphone') {
+        @media screen and (max-width: $iphone){ @content; }
+    } @else if($device == 'small-iphone') {
+        @media screen and (max-width: $small-iphone){ @content; }
+    }
+}

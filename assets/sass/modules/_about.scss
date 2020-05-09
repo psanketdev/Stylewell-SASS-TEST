@@ -1,0 +1,175 @@
+// about banner
+.about-banner {
+  width: 100%;
+  padding:11% 0;
+  @include background('https://dummyimage.com/1349x297/ccc/fff', no-repeat, center, cover);
+}
+
+.about-us {
+  width: 100%;
+  padding: 75px 0 130px; 
+    
+    h2 {
+      margin-bottom: 60px;
+      @include font($sky-blue, 40px, unset, lighter, 1px, unset, unset);
+      text-transform: $capital;
+      text-align: center;
+
+      @include breakpoint('phone'){font-size: 35px;}
+      @include breakpoint('iphone'){font-size: 25px;}
+    }
+
+    #{&}_content{
+      width: 56%;
+      padding-right: 3%;
+      display: inline-block;
+      vertical-align: middle;
+   
+    @include breakpoint('ipad') {
+      width: 80%;
+      padding: 0 0 50px 0;
+      margin: 0 auto;
+      display: block;
+      text-align: center;  
+    }
+
+    @include breakpoint('iphone'){
+      width: 100%;
+      margin: 0 auto;
+    }
+
+      &_details {
+        margin-bottom: 20px;
+        text-align: right;
+        @include breakpoint('ipad'){text-align: left;}
+
+        @include breakpoint('iphone') {text-align: center;}
+
+        a {
+          @include font($sky-blue, 32px, unset, lighter, .5px, unset, unset);
+          text-transform: $capital;
+
+         @include breakpoint('phone'){font-size: 25px;}
+         @include breakpoint('iphone') {font-size: 20px;}
+         @include breakpoint('small-iphone') {font-size: 17px;}
+        }
+
+        :nth-child(1) { color: $primary;}
+        :nth-child(2) {margin: 0 50px;}
+      }
+
+      p {
+        margin-bottom: 20px;
+        @include font(#777, 14px, unset, lighter, .5px, 1.7, unset);
+
+        @include breakpoint('iphone') {font-size: 12px;}
+      }
+
+      &_list{
+        @include flex;
+        @include justify-content(space-between);
+        @include align-item(flex-start);
+        @include flex-wrap(nowrap);
+        @include flex-direction(column);
+
+        li{
+          margin-bottom: 10px;
+          display: inline-block;
+
+          :nth-child(1){
+            padding-right: 7px;
+            text-indent: -9999px;
+            display: inline-block;
+            vertical-align: middle;
+
+            &::before{
+              content: '\f046';
+              text-indent: 0;
+              float: left;
+              font-family: "Fontawesome";
+              font-size: 14px;
+              color: $sky-blue;
+            }
+          }
+
+          :nth-child(2){
+            @include font(#777, 13px, unset, lighter, .2px, unset, unset);
+            @include breakpoint('iphone') {font-size: 12px;}
+          }
+        }
+      }
+    }
+
+    figure{
+      width: 39.5%;
+      display: inline-block;
+      vertical-align: top;
+
+      @include breakpoint('ipad') {
+        width: 70%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      @include breakpoint('iphone') {width: 100%;}
+    }
+}
+
+
+//our team
+
+.team {
+  width: 100%;
+  padding-bottom: 70px;
+  background-color: #f1f1f1;
+  text-align: center;
+    
+  h2 {
+    padding: 40px 0 55px;
+    @include font($sky-blue, 40px, unset, lighter, 1px, unset, unset);
+    text-transform: $capital;
+    text-align: center;
+
+    @include breakpoint('phone'){font-size: 35px;}
+    @include breakpoint('iphone'){font-size: 25px;}
+  }
+
+  #{&}_gallery{
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(flex-start);
+    @include flex-wrap(nowrap);
+    @include flex-direction(row);
+
+    @include breakpoint('ipad'){
+      @include justify-content(space-evenly);
+      @include flex-wrap(wrap);
+    }
+
+    @include breakpoint('iphone') {
+      @include align-item(center);
+    }
+
+    li{
+      width: 29.5%;
+      display: inline-block;
+      
+      &:not(:last-of-type){
+        margin-right: 30px;
+        @include breakpoint('ipad'){margin-right: 0;}
+      }
+
+      @include breakpoint('ipad'){
+        width: 35%;
+        margin-bottom: 30px;
+      }
+
+      @include breakpoint('phone'){
+        width: 55%;
+      }
+
+      @include breakpoint('iphone'){width: 100%;}
+      @include breakpoint('small-iphone') {width: 100%;}
+    }
+  }
+}

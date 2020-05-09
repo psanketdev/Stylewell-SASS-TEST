@@ -1,0 +1,50 @@
+//gallery-banner
+
+.gallery-banner {
+    width: 100%;
+    padding:11% 0;
+    @include background('https://dummyimage.com/1349x297/ccc/fff', no-repeat, center, cover);
+}
+
+
+//image-gallery
+.gallery {
+    width: 100%;
+    padding: 75px 0 45px; 
+    text-align: center;
+
+    h2 {
+        margin-bottom: 55px;
+        @include font($sky-blue, 40px, unset, lighter, 1px, unset, unset);
+        text-transform: $capital;
+
+        @include breakpoint('phone'){font-size: 35px;}
+        @include breakpoint('iphone'){font-size: 25px;}
+    }
+
+    #{&}_images{
+        width: 100%;
+        @include flex;
+        @include justify-content(space-between);
+        @include align-item(center);
+        @include flex-wrap(wrap);
+
+        @include breakpoint('ipad'){
+            @include justify-content(space-evenly);
+        }
+
+        li {
+            width: 23.5%;
+            margin-bottom: 25px;
+            display: inline-block;
+            box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+
+            figure{ width: 100%;}
+
+            @include breakpoint('ipad'){ width: 28%;}
+            @include breakpoint('iphone'){ width: 100%;}
+            @include breakpoint('small-iphone'){ width: 100%;}
+        }
+
+    }
+}
